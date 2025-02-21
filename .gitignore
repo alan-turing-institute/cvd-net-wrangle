@@ -1,0 +1,11 @@
+*.DS_Store
+.idea
+*ASPIRE_dummy_data.csv
+*ASPIRE_dummy_data.xlsx
+*ASPIRE*TRANSFORMED_*csv
+__pycache__/
+*deidentified_database_dump*.sql
+*db_dump.sql
+*FIT-PH_dummy_data.xlsx
+*FIT-PH_*TRANSFORMED*.csv
+*$Wrangling_pipeline_schematic.drawio.bkp
