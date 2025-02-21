@@ -32,7 +32,7 @@ These files are currently blank (but are needed for the pipeline to run):
   - Led the planning and implementation of the first working pipeline based on dummy data (ASPIRE and FIT-PH), thoroughly documenting the decisions taken to make this code base and how to use it. Planned the pipeline so that further datasets could be included at later stages (once transformed to the harmonised format). Considered both database developers and users (researchers using this data for their model development).      
 
 ### Current Contributors
-- Rachael Stickland
+- Rachael Stickland (until 6th March 2025)
 - May Young
 - Mahwish Mohammad
 - Luis Santos
