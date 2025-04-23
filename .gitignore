@@ -9,3 +9,33 @@ __pycache__/
 *FIT-PH_dummy_data.xlsx
 *FIT-PH_*TRANSFORMED*.csv
 *$Wrangling_pipeline_schematic.drawio.bkp
+
+*.annot
+*.cmo
+*.cma
+*.cmi
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+
+# ocamlbuild working directory
+_build/
+
+# ocamlbuild targets
+*.byte
+*.native
+
+# oasis generated files
+setup.data
+setup.log
+
+# Merlin configuring file for Vim and Emacs
+.merlin
+
+# Dune generated files
+*.install
+
+# Local OPAM switch
+_opam/
