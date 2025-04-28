@@ -18,7 +18,16 @@ type patient = {
   id: int;
   sex: sex;
   date_of_birth: Unix.tm;
-  date_of_referral: Unix.tm;
+  referral_at_day: int;
+  diagnosis_at_day: int;
+  treatment_at_day: int;
+  death_at_day: int option;
   (* weight: float; *)
+}
+
+type statistics = {
+  referral_at_days: int;
+  diagnosis_at_days_after_referral: int;
+  start_treatment_at_days_after_diagnosis: int;
 }
 

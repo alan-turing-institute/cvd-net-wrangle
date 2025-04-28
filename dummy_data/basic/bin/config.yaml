@@ -1,0 +1,5 @@
+referral_at_days: 10950
+diagnosis_at_days_after_referral: 10
+start_treatment_at_days_after_diagnosis: 12
+
+  

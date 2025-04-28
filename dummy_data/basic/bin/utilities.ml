@@ -1,4 +1,7 @@
 
+
+open Types
+
 (** [print_date tm] formats a [Unix.tm] record into a string representation 
     in the format "YYYY-MM-DD".
 
@@ -15,6 +18,16 @@ let print_date (tm:Unix.tm):string =
     @param max The maximum value of the range.
     @return A random integer within the specified range.
 *)
+let generate_date ~(years_since_1900:int) : Unix.tm = 
+  {
+      Unix.tm_sec = 0;
+      tm_min = 0;
+      tm_hour = 0;
+      tm_mday = 1;
+      tm_mon = 0;    (* January = 0 *)
+      tm_year = years_since_1900; (* 2000 - 1900 = 100 *)
+      tm_wday = 0; tm_yday = 0; tm_isdst = false
+  } 
 
 let random_int ~(min:int) ~(max:int):int =
   let range = max - min + 1 in
@@ -52,9 +65,9 @@ let random_date ~(start:Unix.tm) ~(end_:Unix.tm) =
   let diff_in_days = (end_time - start_time) / seconds_per_day in
   
   let random_offset = (Random.int diff_in_days) * seconds_per_day in
-  Printf.printf "\nRandom offset in days: %d\n" random_offset;
+  (* Printf.printf "\nRandom offset in days: %d\n" random_offset; *)
   let random_timestamp = float_of_int (start_time + random_offset) in
-  Printf.printf "Random timestamp: %s\n" (print_date (Unix.gmtime random_timestamp));
+  (* Printf.printf "Random timestamp: %s\n" (print_date (Unix.gmtime random_timestamp)); *)
   Unix.gmtime random_timestamp
 
 (** [years_delta start end_] calculates the difference in years between 
@@ -103,4 +116,38 @@ let next_date (start:Unix.tm) (years:int): Unix.tm =
   else
     Unix.gmtime new_date
 
+
+let load_yaml (file_path:Fpath.t):Yaml.value =
+  match Yaml_unix.of_file file_path with
+  | Ok yaml -> yaml
+  | Error (`Msg e) -> failwith ("Failed to read YAML file" ^ e)
+    
+let statistics_of_yaml (y : Yaml.value) : statistics =
+  match y with
+  | `O assoc -> 
+      (* let find_string key =
+        match List.assoc key assoc with
+        | `String s -> s
+        | _ -> failwith ("Expected string for key: " ^ key)
+      in *)
+      let find_int key =
+        match List.assoc key assoc with
+        | `Float f -> int_of_float f
+        | _ -> failwith ("Expected float (int) for key: " ^ key)
+      in
+      (* let find_string_list key =
+        match List.assoc key assoc with
+        | `A lst ->
+            List.map (function
+              | `String s -> s
+              | _ -> failwith "Expected string in languages list"
+            ) lst
+        | _ -> failwith ("Expected list for key: " ^ key)
+      in *)
+      {
+        referral_at_days = find_int "referral_at_days";
+        diagnosis_at_days_after_referral = find_int "diagnosis_at_days_after_referral";
+        start_treatment_at_days_after_diagnosis = find_int "start_treatment_at_days_after_diagnosis";
+      }
+  | _ -> failwith "Expected top-level YAML to be an object"
 
