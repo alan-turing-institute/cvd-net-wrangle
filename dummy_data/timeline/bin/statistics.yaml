@@ -1,0 +1,14 @@
+earliest_dob_year: 60
+latest_dob_year: 100
+mean_referral_at_day: 18250
+std_referral: 5037
+mean_diagnosis_at_day_after_referral: 10
+std_diagnosis: 5
+mean_treatment_at_day_after_diagnosis: 12
+std_treatment: 6
+mean_weight_female: 72
+std_weight_female: 11
+mean_weight_male: 85
+std_weight_male: 12
+
+  
