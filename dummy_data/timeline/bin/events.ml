@@ -13,8 +13,8 @@ let generate_events (statistics:(string, int)Hashtbl.t) : event list =
       let std = float_of_int (Hashtbl.find statistics k.std) in
       let value = int_of_float (gaussian ~mu:mean ~sigma:std) in
       {
-        name = k.label;
-        day = value;
+        ev_name = k.label;
+        recorded_on_day_after_referral = value;
       }
     ) event_keys
 

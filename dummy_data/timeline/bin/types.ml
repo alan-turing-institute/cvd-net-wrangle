@@ -15,13 +15,13 @@ match s with
 | Missing -> "Missing"
 
 type event = {
+  ev_name: string;
   recorded_on_day_after_referral:int;
-  name: string;
 }
 
 type observation = {
+  obs_name: string;
   recorded_on_day_after_referral:int;
-  name: string;
   value_as_string: string;
 }
 

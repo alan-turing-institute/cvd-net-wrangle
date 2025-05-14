@@ -1,7 +1,7 @@
 open Types
 open Utilities
-open Events
-open Observations
+(* open Events
+open Observations *)
 
 let print_patient (p:patient): unit =
   let current_date = Unix.gmtime (Unix.time ()) in
@@ -9,8 +9,8 @@ let print_patient (p:patient): unit =
   let events:event list = p.events in
   let observations: observation list = p.observations in
   let output = Printf.sprintf "\n\nID:%i \tsex:%s \tage:%i" p.id (string_of_sex p.sex) age in
-  let output = String.concat output (List.map (fun e -> Printf.sprintf "\n Event: %s at day after referral %i" e.name e.recorded_on_day_after_referral) events) in
-  let output = String.concat output (List.map (fun o -> Printf.sprintf "\n Observation %s: %s at day %i" o.name o.value_as_string o.recorded_on_day_after_referral) observations) in
+  let output = output ^ String.concat "" (List.map (fun e -> Printf.sprintf "\n Event: %s at day after referral %i" e.ev_name e.recorded_on_day_after_referral) events) in
+  let output = output ^ String.concat "" (List.map (fun o -> Printf.sprintf "\n Observation %s: %s at day %i" o.obs_name o.value_as_string o.recorded_on_day_after_referral) observations) in
   Printf.printf "\n %s" output
 
 let generate_population (num_patients:int)(statistics: (string, int) Hashtbl.t) : patient list =
@@ -29,7 +29,7 @@ let generate_population (num_patients:int)(statistics: (string, int) Hashtbl.t) 
       let patient = { patient with events = Events.generate_events statistics} in
       let patient = 
         match sex with
-        | Male -> { patient with observations = Observations.generate_observations statistics male_observation_keys}
-        | Female -> { patient with observations = Observations.generate_observations statistics female_observation_keys}
+        | Male -> { patient with observations = Observations.generate_observations statistics Observations.male_observation_keys}
+        | Female -> { patient with observations = Observations.generate_observations statistics Observations.female_observation_keys}
         | _ -> { patient with observations = [] } in patient
   )

@@ -14,8 +14,8 @@ let generate_observations (statistics:(string, int)Hashtbl.t) (observation_keys:
       let mean = float_of_int (Hashtbl.find statistics k.mean) in
       let std = float_of_int (Hashtbl.find statistics k.std) in
       {
+        obs_name = k.label;  
         recorded_on_day_after_referral = 0;
-        name = k.label;
         value_as_string = string_of_float (gaussian ~mu:mean ~sigma:std)
       }
     ) observation_keys
