@@ -18,15 +18,21 @@ Additional data were also recorded remotely from home, through self-administered
 
 ### Data Composition
 
-The dataset contains several types of data for each patient:
+Participants in the PHoenix trial were monitored over a 27-week period, during which both several types of data were collected for each participant. The data can be grouped as follows:
 
 - **Demographic:** (e.g. age) recorded at baseline 
-- **History:** (e.g. date of diagnoses) recorded at baseline 
-- **Intervention metadata:** (e.g. riociguat 5mg daily) Date-stamped records of medication regime, titrations and changes
+- **Medical History:** (e.g. date of diagnoses) recorded at baseline 
+- **Intervention regime:** (e.g. riociguat 5mg daily) Date-stamped records of medication regime, titrations and changes
 - **Clinical assessments:** 
     - **Functional test results** (e.g. WHO functional class), recorded at baseline and periodically during followup visits
     - **Patient-reported outcomes from questionaires** (e.g. ED5D5L) collected at x intervals
-- **Temporal device data:** (e.g blood pressure) physiological time-series from implantable devices
+- **Implant temporal data:** (e.g blood pressure) physiological time-series from implantable devices
+
+Figure 2 shows the timeline of data collection for each participant in the PHonix trial, showing the timing and key types of data collected. Each row represents one patient’s 29-week participation, with colored segments and markers indicating different data modalities. (Say something about what each of the markers mean.)
+
+| ![](data_timeline.jpg) |
+|:--:|
+| *Figure 2: Data collection timeline of key data for PHoenix participants* |
 
 #### Demographics 
 
@@ -35,7 +41,7 @@ Participant demographics data were recorded at enrollment. The PHoenix trial enr
 
 | ![](demographics.jpg) |
 |:--:|
-| *Figure 2: Patient demography key variables recorded at enrollment* |
+| *Figure 3: Patient demography key variables recorded at enrollment* |
 
 
 <!-- 
