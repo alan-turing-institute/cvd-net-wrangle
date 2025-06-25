@@ -6,9 +6,7 @@
 
 The dataset was collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and outcomes. Remote monitoring detects early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. 
 
-The patient cohort comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to receive varying doses of riociguat or selexipag. Patients were monitored over a 27 week period during which they were required to attend 4 hospital visits. At each visit, they underwent clinical assessments for physiological, functional and psychological wellbeing. 
-
-Additional data were also recorded remotely from home, through self-administered tests and implantable devices that tracked continuous physiological signals e.g. blood pressure. Clinical trial outcomes - functional status, adverse events were linked to both in-clinic and remotely acquired measurements.  
+The patient cohort comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to receive varying doses of riociguat or selexipag. Trial design shows that patients were monitored over a 27 week period during which they were required to attend 4 hospital visits. Monitoring of physiological, functional and psychological wellbeing were achieved by patients undergoing clinical assessments at clinic, or through self-reporting questionaires. Additional data were also recorded remotely from home through implantable devices that tracked continuous physiological signals e.g. blood pressure. 
 
 | ![](PHoenix.png) |
 |:--:|
@@ -24,11 +22,12 @@ Participants in the PHoenix trial were monitored over a 27-week period, during w
 - **Medical History:** (e.g. date of diagnoses) recorded at baseline 
 - **Intervention regime:** (e.g. riociguat 5mg daily) Date-stamped records of medication regime, titrations and changes
 - **Clinical assessments:** 
-    - **Functional test results** (e.g. WHO functional class), recorded at baseline and periodically during followup visits
-    - **Patient-reported outcomes from questionaires** (e.g. ED5D5L) collected at x intervals
-- **Implant temporal data:** (e.g blood pressure) physiological time-series from implantable devices
+    - **Functional test results** (e.g. WHO functional class, 6 minute walk test)
+    - **Patient-reported outcomes from questionaires** (e.g. EQ-5D-5L, EmPHasis-10) 
+    - **Physiological vital signs** (e.g. resting blood pressure, NT-proBNP)
+- **Implant temporal data:** (e.g pulmonary artery presssure) -- physiological time-series from implantable devices
 
-Figure 2 shows the timeline of data collection for each participant in the PHonix trial, showing the timing and key types of data collected. Each row represents one patient’s 29-week participation, with colored segments and markers indicating different data modalities. (Say something about what each of the markers mean.)
+Figure 2 shows the timeline of data collection for each participant in the PHonix trial, highlighting the timing and key data collected. Each row represents a patient’s 29-week participation in the study, with colored segments and markers indicating different data modalities. Continuous bands represent daily remote monitoring from implantable devices (e.g. pulmonary artery pressure, cardiac output, and physical activity), while discrete markers denote in-clinic visits, clinical assessments, and therapeutic interventions. [For example, red circles indicate hospital visits, blue squares indicate questionnaire completions, and yellow triangles represent dose adjustments.] This visualisation illustrates the structured and multimodal nature of the dataset across the study period.
 
 | ![](data_timeline.jpg) |
 |:--:|
@@ -38,10 +37,24 @@ Figure 2 shows the timeline of data collection for each participant in the PHoni
 
 Participant demographics data were recorded at enrollment. The PHoenix trial enrolled 17 patients with pulmonary arterial hypertension (PAH). The median age was x years, and x% were female. Most participants were classified as WHO functional class III, reflecting moderate to severe limitations in physical activity. The cohort included patients from a range of socioeconomic backgrounds, and Index of Multiple Deprivation (IMD) scores were recorded to assess deprivation levels. Small sample size limits conclusions about potential bias in key demographic variables.
 
-
 | ![](demographics.jpg) |
 |:--:|
-| *Figure 3: Patient demography key variables recorded at enrollment* |
+| *Figure 3: Patient demography key variables, recorded at enrollment* |
+
+#### Medical History
+
+Patient medical history data in the PHonix trial included information on the time since PAH diagnosis, aetiology of disease, and pre-existing comorbidities. Details of prior PAH treatments were also recorded, including background therapies taken before trial enrolment. These variables provide clinical context for interpreting treatment response and disease progression across the trial period.
+
+| ![](history.jpg) |
+|:--:|
+| *Figure 3: Patient medical history key variables, recorded at enrollment* |
+
+#### Clinical assessments
+
+##### Functional tests
+##### Patient-reported outcomes
+##### Physiological measurements
+
 
 
 <!-- 
