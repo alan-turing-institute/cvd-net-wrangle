@@ -6,10 +6,9 @@
 
 The dataset was collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and outcomes. Remote monitoring detects early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. 
 
-The patient cohort comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to receive varying doses of riociguat or selexipag. Patients were monitored over a 29 week period and were required to attend 4 hospital visits. During each visit, they underwent clinical assessments for physiological, functional and psychological wellbeing. 
+The patient cohort comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to receive varying doses of riociguat or selexipag. Patients were monitored over a 27 week period during which they were required to attend 4 hospital visits. At each visit, they underwent clinical assessments for physiological, functional and psychological wellbeing. 
 
 Additional data were also recorded remotely from home, through self-administered tests and implantable devices that tracked continuous physiological signals e.g. blood pressure. Clinical trial outcomes - functional status, adverse events were linked to both in-clinic and remotely acquired measurements.  
-
 
 | ![](PHoenix.png) |
 |:--:|
@@ -29,6 +28,16 @@ The dataset contains several types of data for each patient:
     - **Patient-reported outcomes from questionaires** (e.g. ED5D5L) collected at x intervals
 - **Temporal device data:** (e.g blood pressure) physiological time-series from implantable devices
 
+#### Demographics 
+
+Participant demographics data were recorded at enrollment. The PHoenix trial enrolled 17 patients with pulmonary arterial hypertension (PAH). The median age was x years, and x% were female. Most participants were classified as WHO functional class III, reflecting moderate to severe limitations in physical activity. The cohort included patients from a range of socioeconomic backgrounds, and Index of Multiple Deprivation (IMD) scores were recorded to assess deprivation levels. Small sample size limits conclusions about potential bias in key demographic variables.
+
+
+| ![](demographics.jpg) |
+|:--:|
+| *Figure 2: Patient demography key variables recorded at enrollment* |
+
+
 <!-- 
 - What entities are being measured (e.g., patients, hospital visits)?
 - What are the key variables/columns?
@@ -41,8 +50,10 @@ The dataset contains several types of data for each patient:
 ## Data Sensitivity and Privacy
 ## Data Missingness 
 -->
+<div style="page-break-after: always;"></div>
 
 ### References
 
 1. [Pulmonary Hypertension: Intensification and Personalization of Combination Rx (PHoenix): A phase IV randomized trial for the evaluation of dose‐response and clinical efficacy of riociguat and selexipag using implanted technologies ](https://pmc.ncbi.nlm.nih.gov/articles/PMC10945040/)
 2. [Remote monitored physiological response to therapeutic escalation and clinical worsening in patients with pulmonary arterial hypertension](https://www.medrxiv.org/content/10.1101/2023.04.27.23289153v2)
+3. [Data Dictionaries](https://thealanturininstitute.sharepoint.com/:x:/r/sites/cvdnetshared/_layouts/15/Doc.aspx?sourcedoc=%7B7D68FCD0-6969-4BD6-BE8D-1251DB4CB34C%7D&file=Co-WIP%20Data%20Dictionaries%20(FitPH%20%26%20ASPIRE).xlsx&action=default&mobileredirect=true)
