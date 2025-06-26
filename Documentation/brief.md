@@ -2,9 +2,9 @@
 
 ### Background
 
-**Fit-PH** is a dataset derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). The trial's primary aim was to assess dose-response effects and clinical efficacy of two medications: **riociguat** and **selexipag**, in addition to standard care. As part of the study, participants were also implanted with cardiovascular monitoring devices to enabke continuous remote capture of physiological signals. 
+**Fit-PH** is a dataset derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). The trial's primary aim was to assess dose-response effects and clinical efficacy of two medications: **riociguat** and **selexipag**, in addition to standard care. As part of the study, participants were also implanted with cardiovascular monitoring devices to enable continuous remote capture of physiological signals. 
 
-The dataset was collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and outcomes. Remote monitoring detects early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. 
+The dataset was collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and outcomes. The aim of remote monitoring is to detect early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. 
 
 The patient cohort comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to receive varying doses of riociguat or selexipag. Trial design shows that patients were monitored over a 27 week period during which they were required to attend 4 hospital visits. Monitoring of physiological, functional and psychological wellbeing were achieved by patients undergoing clinical assessments at clinic, or through self-reporting questionaires. Additional data were also recorded remotely from home through implantable devices that tracked continuous physiological signals e.g. blood pressure. 
 
@@ -16,7 +16,7 @@ The patient cohort comprises of 17 individuals diagnosed with PH who enrolled in
 
 ### Data Composition
 
-Participants in the PHoenix trial were monitored over a 27-week period, during which both several types of data were collected for each participant. The data can be grouped as follows:
+Participants in the PHoenix trial were monitored over a 27-week period, during which both several types of data were collected for each participant. The data can be categorised as follows:
 
 - **Demographic:** (e.g. age) recorded at baseline 
 - **Medical History:** (e.g. date of diagnoses) recorded at baseline 
@@ -35,27 +35,75 @@ Figure 2 shows the timeline of data collection for each participant in the PHoni
 
 #### Demographics 
 
-Participant demographics data were recorded at enrollment. The PHoenix trial enrolled 17 patients with pulmonary arterial hypertension (PAH). The median age was x years, and x% were female. Most participants were classified as WHO functional class III, reflecting moderate to severe limitations in physical activity. The cohort included patients from a range of socioeconomic backgrounds, and Index of Multiple Deprivation (IMD) scores were recorded to assess deprivation levels. Small sample size limits conclusions about potential bias in key demographic variables.
+Participant demographics data were recorded at enrollment. The PHoenix trial enrolled 17 patients with pulmonary arterial hypertension (PAH). Participants' median age was x years, and x% were female. Most participants were classified as WHO functional class III, reflecting moderate to severe limitations in physical activity. The cohort included patients from a range of socioeconomic backgrounds, and Index of Multiple Deprivation (IMD) scores were recorded to assess deprivation levels. Small sample size limits conclusions about potential bias in key demographic variables.
 
 | ![](demographics.jpg) |
 |:--:|
 | *Figure 3: Patient demography key variables, recorded at enrollment* |
 
+(Say something about limitations)
+
 #### Medical History
 
 Patient medical history data in the PHonix trial included information on the time since PAH diagnosis, aetiology of disease, and pre-existing comorbidities. Details of prior PAH treatments were also recorded, including background therapies taken before trial enrolment. These variables provide clinical context for interpreting treatment response and disease progression across the trial period.
+
+The Diagnosis field is recorded as free-text entries, resulting in inconsistent use of terminology, abbreviations, and phrasing to describe the same condition. For example, the same diagnosis may appear as "PVOD" or “PVOD**” making direct comparison or grouping across patients challenging. 
+
+The Comorbidities column contains free-text entries with inconsistent structure and variable levels of detail across patients. Clinical terms are abbreviated (e.g., "ILD", “HTN”), but not always standardised, and some records include additional lifestyle or contextual information—such as smoking status, alchohol intake and BMI—while others omit it entirely. This variability introduces challenges for reliable analysis, as comorbidity data may be incomplete, non-comparable, and difficult to categorise systematically without manual review or natural language processing.
 
 | ![](history.jpg) |
 |:--:|
 | *Figure 3: Patient medical history key variables, recorded at enrollment* |
 
-#### Clinical assessments
+#### Clinical assessment
+
+The clinical assessment component of the dataset captures structured evaluations of 1) patients’ physical function and 2) subjective health status. These assessments include both functional tests, such as the WHO functional class, which provide objective measures of disease impact on daily activity, and patient-reported outcome measures, such as the EmPHasis-10 and EQ-5D-5L questionnaires, which reflect patients’ perceptions of their symptoms, quality of life, and psychological wellbeing.
+
+Data were collected in two settings: during scheduled hospital visits (in-clinic) and remotely through self-reporting from home. In-clinic data include clinical assessments and functional tests conducted by healthcare professionals, while home-reported data consist of questionnaire responses and self-administered measurements completed by patients between visits.
 
 ##### Functional tests
-##### Patient-reported outcomes
+
+##### Patient-reported outcome measures
+
+The patient-reported outcome measure (PROM) captures a patient's subjective experience of their condition, including symptoms, emotional impact, and social functioning. It complements functional tests by providing insight into how pulmonary hypertension affects a patient’s daily life from their own perspective. Three patient-reported outcome measures (PROMs) were used in this clinical trial: the EmPHasis-10 (E10), the Generalized Anxiety Disorder questionnaires (GAD-7 and GAD-2), and the Patient Health Questionnaire (PHQ-9 and PHQ-2).
+
+The __EmPHasis-10 (E10)__ questionnaire is a disease-specific PROM designed to assess quality of life in people with PH. E10 contains 10 equally weighted items, a higher score indicates greater impairment.
+
+In this dataset, two sets of patient E10 scores were recorded. It is unclear whether patients are duplicated across the two sets, which introduces some uncertainty in intepreting the data.
+
+The first set includes item-level scores, recorded inconsistently during hospital visits at enrollment, weeks 12, 15 and 27. Total scores were recorded directly as single values, rather than being derived from the individual items. This limits the ability to verify the accuracy and sometotals appear inconsistent with the expected item-level score, suggesting possible data entry errors. These issues may affect analyses involving patient quality of life. 
+
+The second set contained total scores recorded on a weekly basis throughout the clinical trial. The dataset includes non-numeric free text entries (e.g."PAUSED", "NOT MISSING DATA"), which will require cleaning or exclusion before analysis.
+
+The __GAD-7__ questionnaire is a screening tool for generalized anxiety disorder (GAD); there are 7 symptoms about anxiety in the questionaire. GAD-2 is a shortened version using only the first two symptoms of the GAD-7. Each symptom is scored 0-3 based on frequency every two weeks.
+
+In this dataset, there is greater data completeness for the GAD-2 screening tool compared to the full GAD-7 questionnaire. In many participants, GAD-7 was submitted for only the first three times, while remaining 11 responses are missing. This limits the ability to assess anxiety severity using the full scale and restricts analysis about anxiety to screening-level data only.
+
+The __PHQ-9__ is a 9-item, self-administered questionnaire designed to assess the presence and severity of depressive symptoms. Each of the 9 items reflects a symptom of depression and the range for each item is 0-3, with 3 to mean that the patient experiences the symptom nearly every day. The PHQ2, which serves as a rapid screening tool, is a 2-question subset of the PHQ-9.
+
+As with the GAD-7 data, data is recorded every two weeks and there is greater data completeness for the PHQ-2 screening tool compared to the full PHQ-9 questionnaire.
+
+| ![](prom.jpg) |
+|:--:|
+| *Figure 3: Sample of patient PROM scores and completeness* |
+
+
 ##### Physiological measurements
 
+### Known Issues in the Dataset
 
+This section outlines specific issues observed in the dataset that may affect data interpretation or analysis, including inconsistent terminology and unverifiable total scores.
+
+Some fields such as diagnosis and comorbidities data were recorded as free-text entries, resulting in inconsistent use of terminology, abbreviations, and phrasing to describe the same condition. For example, the same diagnosis may appear as “PAH”, “pulmonary arterial hypertension”, or “Group 1 PH”, making direct comparison or grouping across patients challenging. This lack of standardisation limits the ability to reliably stratify patients by diagnosis type and may introduce ambiguity in downstream analyses unless additional harmonisation or coding is applied.
+
+In the source data, E10 (EmPHsis-10) total scores were recorded directly as single values, rather than being derived from the individual questionnaire items. This limits the ability to verify the accuracy of the total score, and in some cases, the recorded values appear inconsistent with the expected scoring range (0–50), suggesting possible data entry errors. Without access to the item-level responses, it is not possible to validate or recalculate total scores, which may affect analyses involving quality-of-life measures.
+
+There is greater data completeness for the GAD-2 screening tool compared to the full GAD-7 questionnaire. In many cases, only the first two items were recorded, while responses to the remaining five items required to compute a full GAD-7 score are missing. This limits the ability to assess anxiety severity using the full scale and may introduce bias or restrict analysis to screening-level data only.
+
+### Reproducibility of Results
+
+
+(add titration figure here)
 
 <!-- 
 - What entities are being measured (e.g., patients, hospital visits)?
