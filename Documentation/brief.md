@@ -2,7 +2,7 @@
 
 ### Background
 
-**Fit-PH** is a dataset derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). The trial's primary aim was to assess dose-response effects and clinical efficacy of two medications: **riociguat** and **selexipag**, in addition to standard care. As part of the study, participants were also implanted with cardiovascular monitoring devices, which enables continuous remote capture of physiological signals. 
+**Fit-PH** is a dataset derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). The trial's primary aim was to assess dose-response effects and clinical efficacy of two medical regimes: **dual treatment**  - riociguat + ERA and **triple treatment** - selexipag + ERA + PDE5i. As part of the study, participants were also implanted with cardiovascular monitoring devices, which enables continuous remote capture of physiological signals. 
 
 The dataset is collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and outcomes. The aim of remote monitoring is to detect early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. Trial design suggest participants are to be monitored over a 27 week period during which they were required to attend 4 hospital visits. Monitoring of physiological, functional and psychological wellbeing are achieved when patients undergo clinical assessments at clinic, or self-report through questionaires. Additional data is also recorded remotely from home through implantable devices that tracked continuous physiological signals e.g. blood pressure. 
 
@@ -14,7 +14,7 @@ The dataset is collected with the aim of developing personalized treatment-respo
 
 ### Data Composition
 
-On 1st June 2025, the dataset comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to receive varying doses of riociguat or selexipag. Several types of data are collected from each participant over a 27-week period. The data can be categorised as follows:
+On 1st June 2025, the dataset comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to start with the dual or triple treatment. Several types of data are collected from each participant over a 27-week period. The data can be categorised as follows:
 
 - **Demographic:** (e.g. age, sex) recorded at baseline 
 - **Medical History:** (e.g. date of diagnoses, comorbidities) recorded at baseline 
