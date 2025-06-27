@@ -1,12 +1,10 @@
-## Clinical and Physiological Data from PH Monitoring Study
+## Dataset from Monitoring Study on Pulmonary Hypertension Patients (1st June 2025)
 
 ### Background
 
-**Fit-PH** is a dataset derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). The trial's primary aim was to assess dose-response effects and clinical efficacy of two medications: **riociguat** and **selexipag**, in addition to standard care. As part of the study, participants were also implanted with cardiovascular monitoring devices to enable continuous remote capture of physiological signals. 
+**Fit-PH** is a dataset derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). The trial's primary aim was to assess dose-response effects and clinical efficacy of two medications: **riociguat** and **selexipag**, in addition to standard care. As part of the study, participants were also implanted with cardiovascular monitoring devices, which enables continuous remote capture of physiological signals. 
 
-The dataset was collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and outcomes. The aim of remote monitoring is to detect early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. 
-
-The patient cohort comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to receive varying doses of riociguat or selexipag. Trial design shows that patients were monitored over a 27 week period during which they were required to attend 4 hospital visits. Monitoring of physiological, functional and psychological wellbeing were achieved by patients undergoing clinical assessments at clinic, or through self-reporting questionaires. Additional data were also recorded remotely from home through implantable devices that tracked continuous physiological signals e.g. blood pressure. 
+The dataset is collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and outcomes. The aim of remote monitoring is to detect early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. Trial design suggest participants are to be monitored over a 27 week period during which they were required to attend 4 hospital visits. Monitoring of physiological, functional and psychological wellbeing are achieved when patients undergo clinical assessments at clinic, or self-report through questionaires. Additional data is also recorded remotely from home through implantable devices that tracked continuous physiological signals e.g. blood pressure. 
 
 | ![](PHoenix.png) |
 |:--:|
@@ -16,56 +14,66 @@ The patient cohort comprises of 17 individuals diagnosed with PH who enrolled in
 
 ### Data Composition
 
-Participants in the PHoenix trial were monitored over a 27-week period, during which both several types of data were collected for each participant. The data can be categorised as follows:
+On 1st June 2025, the dataset comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to receive varying doses of riociguat or selexipag. Several types of data are collected from each participant over a 27-week period. The data can be categorised as follows:
 
-- **Demographic:** (e.g. age) recorded at baseline 
-- **Medical History:** (e.g. date of diagnoses) recorded at baseline 
+- **Demographic:** (e.g. age, sex) recorded at baseline 
+- **Medical History:** (e.g. date of diagnoses, comorbidities) recorded at baseline 
 - **Intervention regime:** (e.g. riociguat 5mg daily) Date-stamped records of medication regime, titrations and changes
 - **Clinical assessments:** 
     - **Functional test results** (e.g. WHO functional class, 6 minute walk test)
     - **Patient-reported outcomes from questionaires** (e.g. EQ-5D-5L, EmPHasis-10) 
     - **Physiological vital signs** (e.g. resting blood pressure, NT-proBNP)
-- **Implant temporal data:** (e.g pulmonary artery presssure) -- physiological time-series from implantable devices
+- **Implant temporal data:** (e.g pulmonary arterial presssure) -- physiological time-series from implantable devices
 
-Figure 2 shows the timeline of data collection for each participant in the PHonix trial, highlighting the timing and key data collected. Each row represents a patient’s 29-week participation in the study, with colored segments and markers indicating different data modalities. Continuous bands represent daily remote monitoring from implantable devices (e.g. pulmonary artery pressure, cardiac output, and physical activity), while discrete markers denote in-clinic visits, clinical assessments, and therapeutic interventions. [For example, red circles indicate hospital visits, blue squares indicate questionnaire completions, and yellow triangles represent dose adjustments.] This visualisation illustrates the structured and multimodal nature of the dataset across the study period.
+Figure 2 shows the timeline of data collection for each participant in the PHonix trial, highlighting the timing and key data collected. Each row represents a patient’s 29-week participation in the study, with colored segments and markers indicating different data modalities. Continuous bands represent daily remote monitoring from implantable devices (e.g. pulmonary artery pressure, cardiac output, and physical activity), while discrete markers denote in-clinic visits, clinical assessments, and therapeutic interventions. [For example, red circles indicate hospital visits, blue squares indicate questionnaire completions, and yellow triangles represent dose adjustments.] This visualisation illustrates the structured and multimodal nature of the data collected over the study period.
 
 | ![](data_timeline.jpg) |
 |:--:|
 | *Figure 2: Data collection timeline of key data for PHoenix participants* |
 
+The following sections explains data from data category, provides a population distribution of key variables or a sample of individual data, as well as notes about limitations and completeness. 
+
 #### Demographics 
 
-Participant demographics data were recorded at enrollment. The PHoenix trial enrolled 17 patients with pulmonary arterial hypertension (PAH). Participants' median age was x years, and x% were female. Most participants were classified as WHO functional class III, reflecting moderate to severe limitations in physical activity. The cohort included patients from a range of socioeconomic backgrounds, and Index of Multiple Deprivation (IMD) scores were recorded to assess deprivation levels. Small sample size limits conclusions about potential bias in key demographic variables.
-
+Participant demographics data are recorded at enrollment. Participants' median age was x years, and x% were female. Most participants were classified as WHO functional class III, reflecting moderate to severe limitations in physical activity. The cohort included patients from a range of socioeconomic backgrounds, and Index of Multiple Deprivation (IMD) scores were recorded to assess deprivation levels. 
 | ![](demographics.jpg) |
 |:--:|
 | *Figure 3: Patient demography key variables, recorded at enrollment* |
 
-(Say something about limitations)
+Small sample size limits conclusions about potential bias in key demographic variables.
+(Say something about missingness).
 
 #### Medical History
 
-Patient medical history data in the PHonix trial included information on the time since PAH diagnosis, aetiology of disease, and pre-existing comorbidities. Details of prior PAH treatments were also recorded, including background therapies taken before trial enrolment. These variables provide clinical context for interpreting treatment response and disease progression across the trial period.
-
-The Diagnosis field is recorded as free-text entries, resulting in inconsistent use of terminology, abbreviations, and phrasing to describe the same condition. For example, the same diagnosis may appear as "PVOD" or “PVOD**” making direct comparison or grouping across patients challenging. 
-
-The Comorbidities column contains free-text entries with inconsistent structure and variable levels of detail across patients. Clinical terms are abbreviated (e.g., "ILD", “HTN”), but not always standardised, and some records include additional lifestyle or contextual information—such as smoking status, alchohol intake and BMI—while others omit it entirely. This variability introduces challenges for reliable analysis, as comorbidity data may be incomplete, non-comparable, and difficult to categorise systematically without manual review or natural language processing.
+Patient medical history includes key information such as the time since PAH diagnosis, aetiology of disease, and pre-existing comorbidities. Details of prior PAH treatments are also recorded. These variables provide clinical context for interpreting treatment response and disease progression across the trial period.
 
 | ![](history.jpg) |
 |:--:|
 | *Figure 3: Patient medical history key variables, recorded at enrollment* |
 
+The Diagnosis field is recorded as free-text entries, resulting in inconsistent use of terminology, abbreviations, and phrasing to describe the same condition. For example, the same diagnosis may appear as "PVOD" or “PVOD**” making direct comparison or grouping across patients challenging. 
+
+The Comorbidities column contains free-text entries with inconsistent structure and variable levels of detail across patients. Clinical terms are abbreviated (e.g., "ILD", “HTN”), but not always standardised, and some records include additional lifestyle or contextual information—such as smoking status, alchohol intake and BMI—while others omit it entirely. This variability introduces challenges for reliable analysis, as comorbidity data may be incomplete, non-comparable, and difficult to categorise systematically without manual review or natural language processing.
+
 #### Clinical assessment
 
-The clinical assessment component of the dataset captures structured evaluations of 1) patients’ physical function and 2) subjective health status. These assessments include both functional tests, such as the WHO functional class, which provide objective measures of disease impact on daily activity, and patient-reported outcome measures, such as the EmPHasis-10 and EQ-5D-5L questionnaires, which reflect patients’ perceptions of their symptoms, quality of life, and psychological wellbeing.
+Clinical assessments in this trial comprise functional tests, patient-reported outcome measures, and diagnostic investigations. An example of a functional test is the World Health Organisation (WHO) functional class, which provide objective measures of disease impact on daily activity. Examples of  patient-reported outcome measures (PROMs) are the EmPHasis-10 (E10) and EQ-5D-5L questionnaires, which reflect patients’ perceptions of their symptoms, quality of life, and psychological wellbeing. Examples of diagnostic investigations include blood tests and imaging.
 
-Data were collected in two settings: during scheduled hospital visits (in-clinic) and remotely through self-reporting from home. In-clinic data include clinical assessments and functional tests conducted by healthcare professionals, while home-reported data consist of questionnaire responses and self-administered measurements completed by patients between visits.
+Clinical assessments were recorded in two settings: during scheduled hospital visits and through self-reporting from home. Hospital-visit data include diagnostic investigations and functional tests conducted by healthcare professionals, while self-reported data consist of functional tests and PROMs.
 
 ##### Functional tests
 
+Functional tests in this dataset assess patients’ physical capacity and symptom burden in the context of pulmonary hypertension. 
+
+The __6-minute walk test (6MWT)__ measures the distance a person can walk on a flat surface in six minutes as an indicator of exercise tolerance, particularly in individuals with cardiovascular or respiratory conditions. 
+
+The __WHO__ functional class is a clinician-assigned rating of symptom severity based on the patient’s physical limitations during activity. 
+
+Finally the __Incremental Shuttle Walk Test (ISWT)__ evaluates exercise capacity through a paced walking protocol that increases in intensity, offering a more structured alternative to self-paced walking tests.
+
 ##### Patient-reported outcome measures
 
-The patient-reported outcome measure (PROM) captures a patient's subjective experience of their condition, including symptoms, emotional impact, and social functioning. It complements functional tests by providing insight into how pulmonary hypertension affects a patient’s daily life from their own perspective. Three patient-reported outcome measures (PROMs) were used in this clinical trial: the EmPHasis-10 (E10), the Generalized Anxiety Disorder questionnaires (GAD-7 and GAD-2), and the Patient Health Questionnaire (PHQ-9 and PHQ-2).
+Patient-reported outcome measures (PROMs) capture patients' subjective experiences in terms of symptoms, emotional impact, and social functioning. It complements functional tests by providing insight into how pulmonary hypertension affects a patient’s daily life from their own perspective. PROMs in this clinical trial include the EmPHasis-10 (E10), the Generalized Anxiety Disorder questionnaires (GAD-7 and GAD-2), and the Patient Health Questionnaire (PHQ-9 and PHQ-2).
 
 The __EmPHasis-10 (E10)__ questionnaire is a disease-specific PROM designed to assess quality of life in people with PH. E10 contains 10 equally weighted items, a higher score indicates greater impairment.
 
@@ -79,13 +87,13 @@ The __GAD-7__ questionnaire is a screening tool for generalized anxiety disorder
 
 In this dataset, there is greater data completeness for the GAD-2 screening tool compared to the full GAD-7 questionnaire. In many participants, GAD-7 was submitted for only the first three times, while remaining 11 responses are missing. This limits the ability to assess anxiety severity using the full scale and restricts analysis about anxiety to screening-level data only.
 
-The __PHQ-9__ is a 9-item, self-administered questionnaire designed to assess the presence and severity of depressive symptoms. Each of the 9 items reflects a symptom of depression and the range for each item is 0-3, with 3 to mean that the patient experiences the symptom nearly every day. The PHQ2, which serves as a rapid screening tool, is a 2-question subset of the PHQ-9.
+The __PHQ-9__ is a 9-item, self-administered questionnaire designed to assess the presence and severity of depressive symptoms. Each of the 9 items reflects a symptom of depression and the range for each item is 0-3, with 3 to mean that the patient experiences the symptom "nearly every day." The PHQ2, which serves as a rapid screening tool, is a 2-question subset of the PHQ-9.
 
 As with the GAD-7 data, data is recorded every two weeks and there is greater data completeness for the PHQ-2 screening tool compared to the full PHQ-9 questionnaire.
 
 | ![](prom.jpg) |
 |:--:|
-| *Figure 3: Sample of patient PROM scores and completeness* |
+| *Figure 3: Sample of participant PROM scores and completeness* |
 
 
 ##### Physiological measurements
