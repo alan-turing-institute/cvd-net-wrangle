@@ -2,9 +2,19 @@
 
 ### Background
 
-**Fit-PH** is a dataset derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). The trial's primary aim was to assess dose-response effects and clinical efficacy of two medical regimes: **dual treatment**  - riociguat + ERA and **triple treatment** - selexipag + ERA + PDE5i. As part of the study, participants were also implanted with cardiovascular monitoring devices, which enables continuous remote capture of physiological signals. 
+**Fit-PH** is a dataset derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). PHoenix is a trial where participants receive two treatments at two different periods (2 x 2 randomized crossover trial). This design is suited for evaluating short-acting treatments in chronic conditions. Each participant serves as their own control.
 
-The dataset is collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and outcomes. The aim of remote monitoring is to detect early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. Trial design suggest participants are to be monitored over a 27 week period during which they were required to attend 4 hospital visits. Monitoring of physiological, functional and psychological wellbeing are achieved when patients undergo clinical assessments at clinic, or self-report through questionaires. Additional data is also recorded remotely from home through implantable devices that tracked continuous physiological signals e.g. blood pressure. 
+The trial's primary aim was to compare dose-response effects and clinical efficacy of the two medical regimes: 
+- **Dual treatment**  - riociguat + ERA _or_ 
+- **Triple treatment** - selexipag + ERA + PDE5i. 
+
+As part of the study, participants were also implanted with cardiovascular monitoring devices, which enables continuous remote capture of physiological signals. 
+
+The dataset is collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and clinical outcomes. The aim of remote monitoring is to detect early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. 
+
+Trial design suggest participants are to be monitored over a 27 week period during which they were required to attend 4 hospital visits. At week 1-11, patients are randomised to receive either the dual or triple treatment arm.  At weeks 13-15, treatment is stopped to enable a washout. At weeks 16-27, participants begin the other treatment arm. 
+
+Participants undergo monitoring of physiological, functional and psychological wellbeing through undergo clinical assessments at clinic, or self-report through questionaires. In addition, data is also recorded remotely from home through implantable devices that tracked continuous physiological signals e.g. blood pressure. 
 
 | ![](PHoenix.png) |
 |:--:|
@@ -14,7 +24,9 @@ The dataset is collected with the aim of developing personalized treatment-respo
 
 ### Data Composition
 
-On 1st June 2025, the dataset comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to start with the dual or triple treatment. Several types of data are collected from each participant over a 27-week period. The data can be categorised as follows:
+On 1st June 2025, the dataset comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to start by receiving either the dual or triple treatment arms. Multiple outcome measures are collected from each participant over a 27-week period, both in hospital settings and remotely.
+
+The data can be categorised as follows:
 
 - **Demographic:** (e.g. age, sex) recorded at baseline 
 - **Medical History:** (e.g. date of diagnoses, comorbidities) recorded at baseline 
@@ -25,7 +37,7 @@ On 1st June 2025, the dataset comprises of 17 individuals diagnosed with PH who 
     - **Physiological vital signs** (e.g. resting blood pressure, NT-proBNP)
 - **Implant temporal data:** (e.g pulmonary arterial presssure) -- physiological time-series from implantable devices
 
-Figure 2 shows the timeline of data collection for each participant in the PHonix trial, highlighting the timing and key data collected. Each row represents a patient’s 29-week participation in the study, with colored segments and markers indicating different data modalities. Continuous bands represent daily remote monitoring from implantable devices (e.g. pulmonary artery pressure, cardiac output, and physical activity), while discrete markers denote in-clinic visits, clinical assessments, and therapeutic interventions. [For example, red circles indicate hospital visits, blue squares indicate questionnaire completions, and yellow triangles represent dose adjustments.] This visualisation illustrates the structured and multimodal nature of the data collected over the study period.
+Figure 2 shows the timeline of data collection for each participant in the PHonix trial, highlighting the timing and key data collected. Each row represents a patient’s 27-week participation in the study, with colored segments and markers indicating different data modalities. Continuous bands represent daily remote monitoring from implantable devices (e.g. pulmonary artery pressure, cardiac output, and physical activity), while discrete markers denote in-clinic visits, clinical assessments, and therapeutic interventions. [For example, red circles indicate hospital visits, blue squares indicate questionnaire completions, and yellow triangles represent dose adjustments.] This visualisation illustrates the structured and multimodal nature of the data collected over the study period.
 
 | ![](data_timeline.jpg) |
 |:--:|
@@ -45,7 +57,7 @@ Small sample size limits conclusions about potential bias in key demographic var
 
 #### Medical History
 
-Patient medical history includes key information such as the time since PAH diagnosis, aetiology of disease, and pre-existing comorbidities. Details of prior PAH treatments are also recorded. These variables provide clinical context for interpreting treatment response and disease progression across the trial period.
+Patient medical history includes key information such as the time since PAH diagnosis, aetiology of disease, and comorbidities. Names of prior PAH treatments are also recorded. These variables provide clinical context for interpreting treatment response and disease progression across the trial period.
 
 | ![](history.jpg) |
 |:--:|
@@ -57,21 +69,26 @@ The Comorbidities column contains free-text entries with inconsistent structure 
 
 #### Clinical assessment
 
-Clinical assessments in this trial comprise functional tests, patient-reported outcome measures, and diagnostic investigations. An example of a functional test is the World Health Organisation (WHO) functional class, which provide objective measures of disease impact on daily activity. Examples of  patient-reported outcome measures (PROMs) are the EmPHasis-10 (E10) and EQ-5D-5L questionnaires, which reflect patients’ perceptions of their symptoms, quality of life, and psychological wellbeing. Examples of diagnostic investigations include blood tests and imaging.
+Clinical assessments in this trial comprise functional tests, patient-reported outcome measures, and diagnostic investigations. An example of a functional test is the World Health Organisation (WHO) functional class, which provide objective measures of disease impact on daily activity. Examples of  patient-reported outcome measures (PROMs) are the EmPHasis-10 (E10) and EQ-5D-5L questionnaires, which reflect patients’ perceptions of their symptoms, quality of life, and psychological wellbeing. Examples of diagnostic investigations include blood tests and magnetic resonance imaging.
 
-Clinical assessments were recorded in two settings: during scheduled hospital visits and through self-reporting from home. Hospital-visit data include diagnostic investigations and functional tests conducted by healthcare professionals, while self-reported data consist of functional tests and PROMs.
+Clinical assessments were performed in two settings: during scheduled hospital visits and through self-reporting from home. Hospital-visit data include diagnostic investigations and functional tests conducted by healthcare professionals, while self-reported data consist of functional tests and PROMs.
 
-##### Functional tests
+#### Diagnostic Investigations
+
+Diagnostic investigations refer to clinical tests such as blood biomarkers and imaging studies that were used to evaluate treatment outcome during the trial. The PHoenix trial's primary outcome measure is the 'right ventricular stroke volume (RVSV)' as measured by MRI. MRI scans were taken 4 times, during each hospital visit. They were scheduled to capture outcome measures at the beginning and at the end of both treatment arms. The blood biomarker NTpro-BNP, which is a secondary outcome measure was taken at the same times.
+
+#### Functional tests
 
 Functional tests in this dataset assess patients’ physical capacity and symptom burden in the context of pulmonary hypertension. 
 
-The __6-minute walk test (6MWT)__ measures the distance a person can walk on a flat surface in six minutes as an indicator of exercise tolerance, particularly in individuals with cardiovascular or respiratory conditions. 
+The __6-minute walk test (6MWT)__ measures the distance a person can walk on a flat surface in six minutes as an indicator of exercise tolerance, particularly in individuals with cardiovascular or respiratory conditions. In the dataset, there are 6MWT records at the baseline, but not yet for subsequent hospital visits nor self-reports.
 
 The __WHO__ functional class is a clinician-assigned rating of symptom severity based on the patient’s physical limitations during activity. 
 
+(Was this actually part of trial??)
 Finally the __Incremental Shuttle Walk Test (ISWT)__ evaluates exercise capacity through a paced walking protocol that increases in intensity, offering a more structured alternative to self-paced walking tests.
 
-##### Patient-reported outcome measures
+#### Patient-reported outcome measures
 
 Patient-reported outcome measures (PROMs) capture patients' subjective experiences in terms of symptoms, emotional impact, and social functioning. It complements functional tests by providing insight into how pulmonary hypertension affects a patient’s daily life from their own perspective. PROMs in this clinical trial include the EmPHasis-10 (E10), the Generalized Anxiety Disorder questionnaires (GAD-7 and GAD-2), and the Patient Health Questionnaire (PHQ-9 and PHQ-2).
 
@@ -126,6 +143,10 @@ There is greater data completeness for the GAD-2 screening tool compared to the 
 ## Data Missingness 
 -->
 <div style="page-break-after: always;"></div>
+
+| ![](outcome_measures.png) |
+|:--:|
+| *Figure 1: PHOenix Participants' Outcome Measures* |
 
 ### References
 
