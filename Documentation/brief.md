@@ -2,19 +2,21 @@
 
 ### Background
 
-**Fit-PH** is a dataset derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). PHoenix is a trial where participants receive two treatments at two different periods (2 x 2 randomized crossover trial). This design is suited for evaluating short-acting treatments in chronic conditions. Each participant serves as their own control.
+**Fit-PH** is data derived from _PHoenix_, a Phase IV randomized clinical trial involving patients with pulmonary hypertension (PH). PHoenix is a trial where participants receive two treatments at two different periods (2 x 2 randomized crossover trial). This design trial is suited for evaluating short-acting treatments in chronic conditions and where each participant serves as their own control.
 
-The trial's primary aim was to compare dose-response effects and clinical efficacy of the two medical regimes: 
+The trial's primary aim is to compare dose-response effects and clinical efficacy of two medical regimes:
 - **Dual treatment**  - riociguat + ERA _or_ 
 - **Triple treatment** - selexipag + ERA + PDE5i. 
 
-As part of the study, participants were also implanted with cardiovascular monitoring devices, which enables continuous remote capture of physiological signals. 
+As part of the study, participants were also implanted with two cardiovascular monitoring devices which enables continuous remote capture of physiological signals. These devices are:
+- **CardioMEMS™** - a wireless pulmonary artery sensor
+- **ConfirmRx™** - an insertable cardiac rhythm monitor
 
-The dataset is collected with the aim of developing personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and clinical outcomes. The aim of remote monitoring is to detect early signs of therapeutic response -or adverse changes- to enable timely adjustment strategies. 
+Trial design suggests participants are to be monitored over a 27 week period during which they were required to attend 4 hospital visits. At week 0, patients are randomised to receive for the duration of 11 weeks, either the dual or triple treatment arm.  At weeks 13-15, treatment is stopped to enable a washout. At week 16, participants receive, for the same duration, the other treatment arm. 
 
-Trial design suggest participants are to be monitored over a 27 week period during which they were required to attend 4 hospital visits. At week 1-11, patients are randomised to receive either the dual or triple treatment arm.  At weeks 13-15, treatment is stopped to enable a washout. At weeks 16-27, participants begin the other treatment arm. 
+Data analysis and modelling is planned to develop personalized treatment-response profiles, by correlating each individual's device-measured physiology with medication dosing and clinical outcomes. Remote data is used to detect early signs of therapeutic response -or adverse changes-, to enable timely adjustment strategies.  
 
-Participants undergo monitoring of physiological, functional and psychological wellbeing through undergo clinical assessments at clinic, or self-report through questionaires. In addition, data is also recorded remotely from home through implantable devices that tracked continuous physiological signals e.g. blood pressure. 
+In summary, Fit-PH data will comprise of individuals diagnosed with PH who enrolled in the PHoenix clinical trial. They were randomised to start by receiving either the dual or triple treatment arms. Multiple outcome measures are collected from each participant, both in hospital settings and remotely. These outcome measures will help indicate each participant’s physiological response, treatment efficacy, and potential adverse effects, providing insights into the optimal therapy for managing pulmonary hypertension.
 
 | ![](PHoenix.png) |
 |:--:|
@@ -24,9 +26,11 @@ Participants undergo monitoring of physiological, functional and psychological w
 
 ### Data Composition
 
-On 1st June 2025, the dataset comprises of 17 individuals diagnosed with PH who enrolled in the clinical trial and were randomised to start by receiving either the dual or triple treatment arms. Multiple outcome measures are collected from each participant over a 27-week period, both in hospital settings and remotely.
+In March 2025, Turing ingressed into a Turing Safe Haven Tier 3 environment a Fit-PH dataset from Sheffield Training Hospital NHS Trust. The data wrangling team removed some identifying information and egressed a reduced dataset into a Tier 2 environment for analysis purposes. 
 
-The data can be categorised as follows:
+We refer to this version of the dataset as Fit-PH V1.0 and anticipate that there will be subsequent versions, with new patient records.
+
+Fit-PH V1.0 participants' data can be categorised as follows:
 
 - **Demographic:** (e.g. age, sex) recorded at baseline 
 - **Medical History:** (e.g. date of diagnoses, comorbidities) recorded at baseline 
@@ -37,17 +41,21 @@ The data can be categorised as follows:
     - **Physiological vital signs** (e.g. resting blood pressure, NT-proBNP)
 - **Implant temporal data:** (e.g pulmonary arterial presssure) -- physiological time-series from implantable devices
 
-Figure 2 shows the timeline of data collection for each participant in the PHonix trial, highlighting the timing and key data collected. Each row represents a patient’s 27-week participation in the study, with colored segments and markers indicating different data modalities. Continuous bands represent daily remote monitoring from implantable devices (e.g. pulmonary artery pressure, cardiac output, and physical activity), while discrete markers denote in-clinic visits, clinical assessments, and therapeutic interventions. [For example, red circles indicate hospital visits, blue squares indicate questionnaire completions, and yellow triangles represent dose adjustments.] This visualisation illustrates the structured and multimodal nature of the data collected over the study period.
+As mentioned above, different data is collected in different settings, these settings are: in-hospital, self reported from home or via implants. Different data are recorded at different intervals over the 27 week duration of the trial. 
+
+We used FitPH V1.0 to generate Figure 1 below, highlighting the timing and key data collected. Each row represents a patient’s 27-week participation in the study, with colored segments and markers indicating different data modalities. Continuous bands represent daily remote monitoring from implantable devices (e.g. pulmonary artery pressure, cardiac output, and physical activity), while discrete markers denote in-clinic visits, clinical assessments, and therapeutic interventions. [For example, red circles indicate hospital visits, blue squares indicate questionnaire completions, and yellow triangles represent dose adjustments.] This visualisation illustrates the structured and multimodal nature of the data collected over the study period.
 
 | ![](data_timeline.jpg) |
 |:--:|
-| *Figure 2: Data collection timeline of key data for PHoenix participants* |
+| *Figure 2: Data collection timeline of key data for PHoenix participants, on the 1st June 2025* |
 
-The following sections explains data from data category, provides a population distribution of key variables or a sample of individual data, as well as notes about limitations and completeness. 
 
 #### Demographics 
 
-Participant demographics data are recorded at enrollment. Participants' median age was x years, and x% were female. Most participants were classified as WHO functional class III, reflecting moderate to severe limitations in physical activity. The cohort included patients from a range of socioeconomic backgrounds, and Index of Multiple Deprivation (IMD) scores were recorded to assess deprivation levels. 
+Participant demographics data are recorded at enrollment. 
+
+The dataset received on the 17th June shows that participants' median age was x years, and x% were female. Most participants were classified as WHO functional class III, reflecting moderate to severe limitations in physical activity. The cohort included patients from a range of socioeconomic backgrounds, and Index of Multiple Deprivation (IMD) scores were recorded to assess deprivation levels. 
+
 | ![](demographics.jpg) |
 |:--:|
 | *Figure 3: Patient demography key variables, recorded at enrollment* |
@@ -57,21 +65,23 @@ Small sample size limits conclusions about potential bias in key demographic var
 
 #### Medical History
 
-Patient medical history includes key information such as the time since PAH diagnosis, aetiology of disease, and comorbidities. Names of prior PAH treatments are also recorded. These variables provide clinical context for interpreting treatment response and disease progression across the trial period.
+Patient medical history is recorded during the baseline visit, and includes key information such as the time since PAH diagnosis, aetiology of disease, and comorbidities. Names of prior PAH treatments are also recorded. These variables provide clinical context for interpreting treatment response and disease progression across the trial period.
 
 | ![](history.jpg) |
 |:--:|
 | *Figure 3: Patient medical history key variables, recorded at enrollment* |
 
-The Diagnosis field is recorded as free-text entries, resulting in inconsistent use of terminology, abbreviations, and phrasing to describe the same condition. For example, the same diagnosis may appear as "PVOD" or “PVOD**” making direct comparison or grouping across patients challenging. 
+The `Diagnosis` data is stored as free-text entries, resulting in inconsistent use of terminology, abbreviations, and phrasing to describe the same condition. For example, the same diagnosis may appear as "PVOD" or “PVOD**” making direct comparison or grouping across patients challenging. 
 
-The Comorbidities column contains free-text entries with inconsistent structure and variable levels of detail across patients. Clinical terms are abbreviated (e.g., "ILD", “HTN”), but not always standardised, and some records include additional lifestyle or contextual information—such as smoking status, alchohol intake and BMI—while others omit it entirely. This variability introduces challenges for reliable analysis, as comorbidity data may be incomplete, non-comparable, and difficult to categorise systematically without manual review or natural language processing.
+The `Comorbidities` column contains free-text entries with inconsistent structure and variable levels of detail across patients. Clinical terms are abbreviated (e.g., "ILD", “HTN”), but not always standardised, and some records include additional lifestyle or contextual information—such as smoking status, alchohol intake and BMI—while others omit it entirely. This variability introduces challenges for reliable analysis, as comorbidity data may be incomplete, non-comparable, and difficult to categorise systematically without manual review or natural language processing.
 
 #### Clinical assessment
 
 Clinical assessments in this trial comprise functional tests, patient-reported outcome measures, and diagnostic investigations. An example of a functional test is the World Health Organisation (WHO) functional class, which provide objective measures of disease impact on daily activity. Examples of  patient-reported outcome measures (PROMs) are the EmPHasis-10 (E10) and EQ-5D-5L questionnaires, which reflect patients’ perceptions of their symptoms, quality of life, and psychological wellbeing. Examples of diagnostic investigations include blood tests and magnetic resonance imaging.
 
-Clinical assessments were performed in two settings: during scheduled hospital visits and through self-reporting from home. Hospital-visit data include diagnostic investigations and functional tests conducted by healthcare professionals, while self-reported data consist of functional tests and PROMs.
+
+
+Clinical assessments are performed throughout the trial in two settings: during scheduled hospital visits and through self-reporting from home. Hospital-visit data include diagnostic investigations and functional tests conducted by healthcare professionals, while self-reported data consist of functional tests and PROMs.
 
 #### Diagnostic Investigations
 
