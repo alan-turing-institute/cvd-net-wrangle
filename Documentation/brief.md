@@ -94,19 +94,17 @@ __PHoenix's functional tests__ assess patients’ physical capacity and symptom 
 
 __Diagnostic investigations__ PHoenix trial used imaging and blood biomarkers to evaluate treatment arm outcome.
 
-- __MRI scans__ play a key role in evaluating Phoenix participants by providing accurate, non-invasive measurements of 'right ventricular stroke volume (RVSV)', which is the trial's primary outcome measure. Each participant undergoes and MRI scan 4 times; these are scheduled to capture primary outcome measures at the beginning and at the end of both treatment arms. 
-- A __blood test__ to monitor changes in the levels of the NTpro-BNP protein help evaluate treatment response. The result of this test is a secondary outcome measure. As with MRI scans, this test is performed 4 times throughout the trial, at the beginnings and ends of each treatment arm.
+- __MRI scans__ play a key role in evaluating Phoenix participants by providing accurate, non-invasive measurements of 'right ventricular stroke volume (RVSV)', which is the trial's primary outcome measure. Overall, 72 measurements are recorded during each scan. Each participant undergoes an MRI scan 4 times; these are scheduled to capture primary outcome measures at the beginning and at the end of both treatment arms. The date of each scan is recorded.
+- A __blood test__ to monitor changes in the levels of the NTpro-BNP protein help evaluate treatment response. The result of this test is a secondary outcome measure. As with MRI scans, this test is performed 4 times throughout the trial, at the beginnings and ends of each treatment arm. Instead of a measurement date, a study timeline record indicates when the test was taken, during the trial. 
 
 __Patient-reported outcome measures (PROMs)__ capture participants' subjective experience of PH in terms of symptoms, emotional impact, and social functioning. It complements functional tests by providing insight into how pulmonary hypertension affects a patient’s daily life from their own perspective. 
 
-- __EmPHasis-10 (E10)__ questionnaire is a disease-specific PROM to assess quality of life in people with PH. E10 contains 10 equally weighted items. There are two sets of patient E10 scores in Fit_PHV1.0. 
+- __EmPHasis-10 (E10)__ questionnaire is a disease-specific PROM to assess quality of life in people with PH. E10 contains 10 equally weighted items. There are two sets of patient E10 scores in Fit_PHV1.0 _(see Known Issues below about administration times and score records)._
 <!-- These issues may affect analyses involving patient quality of life.  -->
 
-- __GAD-7__ is a screening tool for generalized anxiety disorder (GAD) with 7 items, each denoting a symptom about anxiety. GAD-2 is a shortened version using only the first two items of the GAD-7. Each item is scored 0-3 based on frequency the symptom is experienced fortnightly.
+- __GAD-7__ is a screening tool for generalized anxiety disorder (GAD) with 7 items, each denoting a symptom about anxiety. GAD-2 is a shortened version using only the first two items of the GAD-7. Each item is scored 0-3 based on frequency the symptom is experienced fortnightly. These questionaires are answered fortnightly. 
 
-- __PHQ-9__ is a 9-item, self-administered questionnaire designed to assess the presence and severity of depressive symptoms. Each of the 9 items reflects a symptom of depression and the range for each item is 0-3, with 3 to mean that the patient experiences the symptom "nearly every day." 
-
-One set of E10 scores contain weekly records, the other set contain records from weeks 0, 12, 15 and 27. GAD2/7 and PHQ2/9 are recorded fortnightly.
+- __PHQ-9__ is a 9-item, self-administered questionnaire designed to assess the presence and severity of depressive symptoms. Each of the 9 items reflects a symptom of depression and the range for each item is 0-3, with 3 to mean that the patient experiences the symptom "nearly every day." These questionaires are answered fortnightly. 
 
 | ![](prom.jpg) |
 |:--:|
