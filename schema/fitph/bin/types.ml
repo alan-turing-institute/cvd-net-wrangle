@@ -26,3 +26,9 @@ type table = {
   columns : column list;
   constraints: constraint_ list;
 }
+
+type insert = {
+  table : string;
+  column: string;
+  values: string list;
+}

@@ -5,7 +5,9 @@ CREATE TABLE participant (
   diagnosis VARCHAR(100),
   dob TIMESTAMP,
   height_m NUMERIC(5,2),
-  PRIMARY KEY (id)
+  sex_id INTEGER,
+  PRIMARY KEY (id),
+  FOREIGN KEY (sex_id) REFERENCES sex(id)
 );
 
 CREATE TABLE visit (
@@ -87,3 +89,5 @@ CREATE TABLE phq7 (
   PRIMARY KEY (id),
   FOREIGN KEY (visit_id) REFERENCES visit(id)
 );
+
+INSERT INTO sex (category) VALUES ('Female'),('Male');

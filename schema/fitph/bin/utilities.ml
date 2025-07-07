@@ -31,6 +31,10 @@ let generate_create_table_sql tbl =
   let all_lines = cols_sql @ constraints_sql in
   Printf.sprintf "CREATE TABLE %s (\n  %s\n);" tbl.name (String.concat ",\n  " all_lines)
 
+let generate_insert_into_table_sql (ins:insert):string =
+  let values_list = List.map (fun v -> Printf.sprintf "(%s)" @@ "'" ^ v ^"'") ins.values in
+  Printf.sprintf "INSERT INTO %s (%s) VALUES %s;" ins.table ins.column @@ String.concat "," values_list 
+
 (* let generate_create_table_sql tbl =
   let cols_sql = List.map string_of_column tbl.columns in
   Printf.sprintf "CREATE TABLE %s (\n  %s\n);" tbl.name (String.concat ",\n  " cols_sql) *)
