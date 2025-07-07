@@ -8,22 +8,6 @@ CREATE TABLE participant (
   PRIMARY KEY (id)
 );
 
-CREATE TABLE weight (
-  id SERIAL NOT NULL,
-  visit_id INTEGER NOT NULL,
-  weight_kg NUMERIC(5,2) NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (visit_id) REFERENCES visit(id)
-);
-
-CREATE TABLE comorbidity (
-  id SERIAL NOT NULL,
-  visit_id INTEGER NOT NULL,
-  comorbidity VARCHAR(100) NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (visit_id) REFERENCES visit(id)
-);
-
 CREATE TABLE visit (
   id SERIAL NOT NULL,
   participant_id VARCHAR(10) NOT NULL,
@@ -37,6 +21,39 @@ CREATE TABLE visit_label (
   id SERIAL NOT NULL,
   label VARCHAR(10) NOT NULL,
   PRIMARY KEY (id)
+);
+
+CREATE TABLE comorbidity (
+  id SERIAL NOT NULL,
+  visit_id INTEGER NOT NULL,
+  comorbidity VARCHAR(100) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (visit_id) REFERENCES visit(id)
+);
+
+CREATE TABLE weight (
+  id SERIAL NOT NULL,
+  visit_id INTEGER NOT NULL,
+  weight_kg NUMERIC(5,2) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (visit_id) REFERENCES visit(id)
+);
+
+CREATE TABLE ntp_pro_bnp (
+  id SERIAL NOT NULL,
+  visit_id INTEGER NOT NULL,
+  NTProBNP_pgML NUMERIC(5,2) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (visit_id) REFERENCES visit(id)
+);
+
+CREATE TABLE 6_min_walk_distance (
+  id SERIAL NOT NULL,
+  6mwd_m INTEGER,
+  visit_id INTEGER NOT NULL,
+  notes VARCHAR(100),
+  PRIMARY KEY (id),
+  FOREIGN KEY (visit_id) REFERENCES visit(id)
 );
 
 CREATE TABLE gad2 (
@@ -67,23 +84,6 @@ CREATE TABLE phq7 (
   id SERIAL NOT NULL,
   score INTEGER,
   visit_id INTEGER NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (visit_id) REFERENCES visit(id)
-);
-
-CREATE TABLE ntp_pro_bnp (
-  id SERIAL NOT NULL,
-  visit_id INTEGER NOT NULL,
-  NTProBNP_pg/ML NUMERIC(5,2) NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (visit_id) REFERENCES visit(id)
-);
-
-CREATE TABLE 6_min_walk_distance (
-  id SERIAL NOT NULL,
-  6mwd_m INTEGER,
-  visit_id INTEGER NOT NULL,
-  notes VARCHAR(100),
   PRIMARY KEY (id),
   FOREIGN KEY (visit_id) REFERENCES visit(id)
 );
