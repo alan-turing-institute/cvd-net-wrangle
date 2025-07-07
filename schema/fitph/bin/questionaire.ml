@@ -33,4 +33,4 @@ let gad7 = {
   ];
 }
 
-let questionaire_tables = [gad7]
+let questionaire_tables = [gad2; gad7]

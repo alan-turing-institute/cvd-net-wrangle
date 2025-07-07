@@ -4,7 +4,7 @@ let visit = {
   columns = [
     { name = "id"; typ = Serial; nullable = false };
     { name = "participant_id"; typ = Varchar 10; nullable = false };
-    { name = "week"; typ = Int; nullable = false };
+    { name = "study_week"; typ = Int; nullable = false };
     { name = "days_after_anchor"; typ = Int; nullable = true };
   ];
   constraints = [
@@ -18,7 +18,7 @@ let visit = {
 }
 
 let visit_label = {
-  name = "timeline_label";
+  name = "visit_label";
   columns = [
     { name = "id"; typ = Serial; nullable = false };
     { name = "label"; typ = Varchar 10; nullable = false };
