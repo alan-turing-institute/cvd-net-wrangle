@@ -1,5 +1,13 @@
 
 
+CREATE TABLE sex (
+  id SERIAL NOT NULL,
+  category VARCHAR(6),
+  PRIMARY KEY (id)
+);
+
+INSERT INTO sex (category) VALUES ('Female'),('Male');
+
 CREATE TABLE participant (
   id VARCHAR(10) NOT NULL,
   diagnosis VARCHAR(100),
@@ -10,12 +18,6 @@ CREATE TABLE participant (
   FOREIGN KEY (sex_id) REFERENCES sex(id)
 );
 
-CREATE TABLE sex (
-  id SERIAL NOT NULL,
-  category VARCHAR(6),
-  PRIMARY KEY (id)
-);
-
 CREATE TABLE visit (
   id SERIAL NOT NULL,
   participant_id VARCHAR(10) NOT NULL,
@@ -23,12 +25,6 @@ CREATE TABLE visit (
   days_after_anchor INTEGER,
   PRIMARY KEY (id),
   FOREIGN KEY (participant_id) REFERENCES participant(id)
-);
-
-CREATE TABLE visit_label (
-  id SERIAL NOT NULL,
-  label VARCHAR(10) NOT NULL,
-  PRIMARY KEY (id)
 );
 
 CREATE TABLE comorbidity (
@@ -95,5 +91,3 @@ CREATE TABLE phq7 (
   PRIMARY KEY (id),
   FOREIGN KEY (visit_id) REFERENCES visit(id)
 );
-
-INSERT INTO sex (category) VALUES ('Female'),('Male');

@@ -19,22 +19,4 @@ let participant = {
   ];
 }
 
-let sex = {
-  name = "sex";
-  columns = [
-    { name = "id"; typ = Serial; nullable = false };
-    { name = "category"; typ = Varchar 6; nullable = true };
-  ];
-  constraints = [
-    PrimaryKey ["id"];
-  ];
-}
-
-let sex_vocab = {
-  table = "sex";
-  column= "category";
-  values=["Female";"Male"]
-}
-
-let demography_tables = [participant; sex]
-let demography_vocabulary = [sex_vocab]
+let demography_tables = [participant]

@@ -28,4 +28,4 @@ let visit_label = {
   ];
 }
 
-let visit_tables = [visit; visit_label] 
+let visit_tables = [visit] 
