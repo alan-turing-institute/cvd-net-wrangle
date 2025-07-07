@@ -10,6 +10,12 @@ CREATE TABLE participant (
   FOREIGN KEY (sex_id) REFERENCES sex(id)
 );
 
+CREATE TABLE sex (
+  id SERIAL NOT NULL,
+  category VARCHAR(6),
+  PRIMARY KEY (id)
+);
+
 CREATE TABLE visit (
   id SERIAL NOT NULL,
   participant_id VARCHAR(10) NOT NULL,

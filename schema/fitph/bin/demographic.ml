@@ -36,5 +36,5 @@ let sex_vocab = {
   values=["Female";"Male"]
 }
 
-let demography_tables = [participant]
+let demography_tables = [participant; sex]
 let demography_vocabulary = [sex_vocab]
