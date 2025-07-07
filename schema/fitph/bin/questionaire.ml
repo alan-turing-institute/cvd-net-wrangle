@@ -33,4 +33,38 @@ let gad7 = {
   ];
 }
 
-let questionaire_tables = [gad2; gad7]
+let phq2 = {
+  name = "phq2";
+  columns = [
+    { name = "id"; typ = Serial; nullable = false };
+    { name = "score"; typ=Int; nullable = true };  
+    { name = "visit_id"; typ=Int; nullable = false };
+  ];
+  constraints = [
+    PrimaryKey ["id"];
+    ForeignKey {
+      columns = ["visit_id"];
+      ref_table = "visit";
+      ref_columns = ["id"];
+    };
+  ];
+}
+
+let phq7 = {
+  name = "phq7";
+  columns = [
+    { name = "id"; typ = Serial; nullable = false };
+    { name = "score"; typ=Int; nullable = true };  
+    { name = "visit_id"; typ=Int; nullable = false };
+  ];
+  constraints = [
+    PrimaryKey ["id"];
+    ForeignKey {
+      columns = ["visit_id"];
+      ref_table = "visit";
+      ref_columns = ["id"];
+    };
+  ];
+}
+
+let questionaire_tables = [gad2; gad7; phq2; phq7]

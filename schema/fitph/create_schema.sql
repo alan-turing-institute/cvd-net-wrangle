@@ -55,10 +55,35 @@ CREATE TABLE gad7 (
   FOREIGN KEY (visit_id) REFERENCES visit(id)
 );
 
+CREATE TABLE phq2 (
+  id SERIAL NOT NULL,
+  score INTEGER,
+  visit_id INTEGER NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (visit_id) REFERENCES visit(id)
+);
+
+CREATE TABLE phq7 (
+  id SERIAL NOT NULL,
+  score INTEGER,
+  visit_id INTEGER NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (visit_id) REFERENCES visit(id)
+);
+
 CREATE TABLE ntp_pro_bnp (
   id SERIAL NOT NULL,
   visit_id INTEGER NOT NULL,
   NTProBNP_pg/ML NUMERIC(5,2) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (visit_id) REFERENCES visit(id)
+);
+
+CREATE TABLE 6_min_walk_distance (
+  id SERIAL NOT NULL,
+  6mwd_m INTEGER,
+  visit_id INTEGER NOT NULL,
+  notes VARCHAR(100),
   PRIMARY KEY (id),
   FOREIGN KEY (visit_id) REFERENCES visit(id)
 );

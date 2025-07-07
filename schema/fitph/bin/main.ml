@@ -4,9 +4,10 @@ open Demographic
 open Visit
 open Questionaire
 open Clinical_assessment
+open Functional
 
 let () =
-  let tables = demography_tables @ visit_tables @ questionaire_tables @ clinical_assessment_tables in
+  let tables = demography_tables @ visit_tables @ questionaire_tables @ clinical_assessment_tables @ functional_test_tables in
   let oc = open_out "create_schema.sql" in
   List.iter (fun table -> Printf.fprintf oc "\n\n%s" @@ generate_create_table_sql table) tables;
   close_out oc;

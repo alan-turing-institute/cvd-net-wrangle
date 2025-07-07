@@ -1,5 +1,5 @@
 (executable
  (public_name fitph)
  (name main)
- (modules types utilities demographic visit questionaire clinical_assessment main)
+ (modules types utilities demographic visit questionaire clinical_assessment functional main)
  (libraries fitph))
